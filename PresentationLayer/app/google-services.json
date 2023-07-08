@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "131254119502",
+    "project_id": "rasanotification-8e024",
+    "storage_bucket": "rasanotification-8e024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131254119502:android:2a7f09596d93ea7269271f",
+        "android_client_info": {
+          "package_name": "com.example.presentationlayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131254119502-ndn4aef02nk67aoou97953ef5molpuel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBygZs8f72__rS57oRj1CkxVSAITZu0PxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131254119502-ndn4aef02nk67aoou97953ef5molpuel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,181 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - breakfast
+  - snack
+  - lunch
+  - dinner
+  - update_weight
+  - find_matching_food
+  - happy_weight
+  - sad_weight
+  - happy_food
+  - sad_food
+  - change_breakfast
+  - change_lunch
+  - change_dinner
+  - change_snack
+  - update_goal_weight
+  - excersice
+  - choose
+  - happy_lunch
+  - happy_dinner
+  - happy_snack
+entities:
+  - foodName
+  - weight
+  - ex
+slots:
+  foodName:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: foodName
+      intent: find_matching_food
+  weight:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: weight
+  goal_weight:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: weight
+  ex:
+   type: float
+   influence_conversation: true
+   mappings:
+   - type: from_text
+     entity: ex
+     intent: choose
+  break_id:
+   type: any
+   influence_conversation: false
+   mappings:
+   - type: custom
+  lunch_id:
+   type: any
+   influence_conversation: false
+   mappings:
+   - type: custom
+  dinner_id:
+   type: any
+   influence_conversation: false
+   mappings:
+   - type: custom
+  snack_id:
+   type: any
+   influence_conversation: false
+   mappings:
+   - type: custom
+  
+responses:
+  utter_greet:
+  - text: "مرحبا بك ! كيف حالك"
+  - text: "صبح صبح يا عم الحج"
+  - text: " كيف الحال يا بطل"
+  - text: "اهلا بك كيف حالك"
+  - text: " كيف حالك اليوم"
+  
+  utter_ask_ex:
+  - text: "(التمرين رقم 1) ادخل رقم التمرين الذي تريده"
+
+  utter_cheer_up:
+  - text: "اليك شيئا يجعلك تضحك"
+    image: "https://beautifull.cc/wp-content/uploads/2018/08/4192.png"
+  - text: "لا تحزن ! اليك شيئا  ربما يسعدك "
+    image: "https://i.pinimg.com/originals/fa/a4/bd/faa4bdd6493f319d001a11a2042a2da7.jpg"
+  - text: "اليك شيئا يغير من نفسيتك"
+    image: "https://i.pinimg.com/originals/8e/5d/72/8e5d72497b0f428d68e5aeb0ff5d0eb1.jpg"
+  - text: "اليك شيئا ربما يفرحك"
+    image: "https://th.bing.com/th/id/OIP.IwuW8HSgRJrslWZwLl88_wHaJ6?pid=ImgDet&rs=1"
+
+  utter_did_that_help:
+  - text: "هل ساعدك ذلك ولو قليلا ؟"
+
+
+  utter_did_that_like:
+  - text: "هل اعجبتك هذه الوجبة ؟"
+
+  utter_happy:
+  - text: " هكذا اريدك دائما بخير .. وانا ايضا بخير الحمدلله"
+  - text: " اريدك ان تبقى هكذا بخير دائما ..وانا ايضا بخير الحمدلله"
+  - text: " اسال الله ان تكون دوما هكذا ^_^ .. وانا ايضا بخير الحمدلله"
+  - text: "يارب دوما هكذا بخير .. وانا ايضا بخير الحمدلله"
+  - text: "رائع ^_^ يسعدنى ذلك .. وانا ايضا بخير الحمدلله"
+
+  utter_fine:
+  - text: "يسعدنى ان ذلك ساعدك ولو قليلا" 
+  - text: "الحمدلله يسعدنى ذلك"
+
+  utter_happy_meal:
+  - text: "بالهناء والشفاء"
+  - text: "رائع ^_^ يسعدنى ذلك"
+  - text: "رائع...بالهناء"
+  - text: " رائع ^_^ يسعدنى ذلك واتمنى ان يعجبك اختياري لك دائما"
+  - text: "اتمنى ان يعجبك اختياري لك دائما"
+  - text: "حقا يسعدنى انه اعجبك .. اتمنى ان يعجبك اختياري لك دائما"
+
+  utter_change_breakfast:
+  - text: "اذا كنت تريد تغيير الوجبة ارسل لى (اريد تغيير وجبة الفطار)"
+
+  utter_change_lunch:
+  - text: "اذا كنت تريد تغيير الوجبة ارسل لى (اريد تغيير وجبة الغداء)"
+
+  utter_change_dinner:
+  - text: "اذا كنت تريد تغيير الوجبة ارسل لى (اريد تغيير وجبة العشاء)"
+
+  utter_change_snack:
+  - text: "اذا كنت تريد تغيير الوجبة ارسل لى (اريد تغيير وجبة الوجبة الخفيفة)"
+
+  utter_happy_weight:
+  - text: "رائع جدا يسعدني انك قد اقتربت من حلمك .. يجب ان تستمر تلك العزيمة والارادة والالتزام بالنظام الغذائي لكي تصل الى هدفك "
+  - text: "حقا يسعدني ذلك .. كنت اعلم انك تستطيع فعل ذلك وها انت قد اقتربت الى هدفك .. استمر يابطل"
+  - text: "رائع جدا الحمدلله على هذا التقدم .. استمر على هذا الاداء والتزم جيدا وسنصل الى هدفك قريبا باذن الله"
+
+  utter_sad_weight:
+  - text: "لا تحزن ان الامر يحتاج بعض الوقت والارادة والعزيمة لذلك لا تحزن وجدد من عزيمتك وانا معك لكي اساعدك على ذلك"
+  - text: "لا تحبط نفسك ولكن عليك ان تجدد من عزيمتك وان تساعدني وتتبع النظام الغذائي جيدا لكي تصل الى هدفك وانا واثق انك تستطيع فعل ذلك"
+  - text: "لا تقول  ذلك ولا تحزن ان الامر يحتاج بعض الوقت مع الالتزام والارادة لكي تصل الى هدفك وانا معك لا تقلق سنصل الى هدفك باذن الله"
+  - text: "لا تحزن طبيعي ان يحدث ذلك ولكن لا تستسلم جدد من عزيمتك وانت تستطيع فعل ذلك وانا معك لكي اساعدك وباذن الله سنصل الى هدفك ولكن عليك ان تتبع النظام الغذائي جيدا"
+
+
+
+  utter_goodbye:
+  - text: "مع السلامة"
+  - text: "فى رعاية الله"
+  - text: "فى حفظ الله"
+  - text: " سأفتقدك .. مع السلامة"
+
+  utter_iamabot:
+  - text: ".اننى روبوت مدعوم من Rasa"
+
+actions:
+  - action_ask_for_breakfast
+  - action_ask_for_snack
+  - action_ask_for_lunch
+  - action_ask_for_dinner
+  - action_ask_for_update_weight
+  - action_for_find_matching_food
+  - action_for_update_goal_weight
+  - utter_ask_ex
+  - action_exce
+  - action_show_exce
+  - action_snack_done
+  - action_break_done
+  - action_lunch_done
+  - action_dinner_done
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

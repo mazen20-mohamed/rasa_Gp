@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5005:5005
+    depends_on:
+      - db
+
+  action_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5055:5055
+    depends_on:
+      - db
+    command: rasa run actions --actions actions
+
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_HOST=containers-us-west-136.railway.app
+      - MYSQL_PORT=6290
+      - MYSQL_DATABASE=railway
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=YqHSeTjXRJrh1OMaL4An
