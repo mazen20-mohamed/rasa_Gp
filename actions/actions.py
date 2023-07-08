@@ -34,7 +34,7 @@ class ActionAskForBreakfast(Action):
         meal = get_breakfast_meal()
         dispatcher.utter_message(text=meal[0][1])
         if meal[0][2] != 'nan':
-            dispatcher.utter_message(text="طريقة عمل الوجبة ايضا من خلال هذا اللينك")
+            dispatcher.utter_message(text="بامكانك مشاهدة طريقة الطبخ من خلال ذلك اللينك")
             dispatcher.utter_message(text=str(meal[0][2]))
 
         dispatcher.utter_message(text="المكونات كالتالي")
@@ -129,7 +129,7 @@ class ActionAskForLunch(Action):
 
         dispatcher.utter_message(text=meal[0][1])
         if meal[0][2] != 'nan':
-            dispatcher.utter_message(text="طريقة عمل الوجبة ايضا من خلال هذا اللينك")
+            dispatcher.utter_message(text="بامكانك مشاهدة طريقة الطبخ من خلال ذلك اللينك")
             dispatcher.utter_message(text=str(meal[0][2]))
 
         dispatcher.utter_message(text="المكونات كالتالي")
@@ -181,7 +181,7 @@ class ActionAskForDinner(Action):
         meal = get_dinner_meal()
         dispatcher.utter_message(text=meal[0][1])
         if meal[0][2] != 'nan':
-            dispatcher.utter_message(text="طريقة عمل الوجبة ايضا من خلال هذا اللينك")
+            dispatcher.utter_message(text="بامكانك مشاهدة طريقة الطبخ من خلال ذلك اللينك")
             dispatcher.utter_message(text=str(meal[0][2]))
 
         dispatcher.utter_message(text="المكونات كالتالي")
