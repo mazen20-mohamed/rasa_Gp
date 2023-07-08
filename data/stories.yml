@@ -1,0 +1,192 @@
+version: "3.1"
+
+stories:
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_fine
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_cheer_up
+
+
+
+#################  breakfast  #######################
+
+- story: food breakfast
+  steps:
+  - intent: breakfast
+  - action: action_ask_for_breakfast
+
+- story: sad food breakfast
+  steps:
+  - intent: breakfast
+  - action: action_ask_for_breakfast
+  - intent: sad_food
+  - action: utter_change_breakfast
+  
+- story: change breakfast
+  steps:
+  - intent: change_breakfast
+  - action: action_ask_for_breakfast
+
+- story: happy food breakfast
+  steps:
+  - intent: breakfast
+  - action: action_ask_for_breakfast
+  - intent: happy_food
+  - action: action_break_done
+  - action: utter_happy_meal
+
+
+
+#################  snack  #######################
+- story: food snack
+  steps:
+  - intent: snack
+  - action: action_ask_for_snack
+
+- story: sad food snack
+  steps:
+  - intent: snack
+  - action: action_ask_for_snack
+  - intent: sad_food
+  - action: utter_change_snack
+
+- story: change snack
+  steps:
+  - intent: change_snack
+  - action: action_ask_for_snack
+
+- story: happy snack
+  steps:
+  - intent: snack
+  - action: action_ask_for_snack
+  - intent: happy_snack
+  - action: action_snack_done
+  - action: utter_happy_meal
+
+#################  lunch  #######################
+
+- story: food lunch
+  steps:
+  - intent: lunch
+  - action: action_ask_for_lunch
+
+- story: sad food lunch
+  steps:
+  - intent: lunch
+  - action: action_ask_for_lunch
+  - intent: sad_food
+  - action: utter_change_lunch
+
+- story: change lunch
+  steps:
+  - intent: change_lunch
+  - action: action_ask_for_lunch
+
+- story: happy food lunch
+  steps:
+  - intent: lunch
+  - action: action_ask_for_lunch
+  - intent: happy_lunch
+  - action: action_lunch_done
+  - action: utter_happy_meal
+
+#################  dinner  #######################
+
+- story: food dinner
+  steps:
+  - intent: dinner
+  - action: action_ask_for_dinner
+
+
+- story: sad food dinner
+  steps:
+  - intent: dinner
+  - action: action_ask_for_dinner
+  - intent: sad_food
+  - action: utter_change_dinner
+
+- story: change dinner
+  steps:
+  - intent: change_dinner
+  - action: action_ask_for_dinner
+
+- story: happy dinner
+  steps:
+  - intent: dinner
+  - action: action_ask_for_dinner
+  - intent: happy_dinner
+  - action: action_dinner_done
+  - action: utter_happy_meal  
+
+#################  lose weight  #######################
+
+- story: happy weight
+  steps:
+  - intent: happy_weight
+  - action: utter_happy_weight
+
+
+#################  gain weight  #######################
+
+- story: sad weight
+  steps:
+  - intent: sad_weight
+  - action: utter_sad_weight
+
+#################  update weight  #######################
+- story: weight_update
+  steps:
+  - intent: update_weight
+  - action: action_ask_for_update_weight
+
+#################  update goal weight  #######################
+- story: weight_goal_update
+  steps:
+  - intent: update_goal_weight
+  - action: action_for_update_goal_weight
+
+- story: weight_weight_goal
+  steps:
+  - intent: update_weight
+  - action: action_ask_for_update_weight
+  - intent: update_goal_weight
+  - action: action_for_update_goal_weight
+
+#################  find food calory #######################
+- story: find matching foodName
+  steps:
+  - intent: find_matching_food
+  - action: action_for_find_matching_food
+
+################# execrcise #######################
+- story: choose execrcise
+  steps:
+  - intent: excersice 
+  - action: action_show_exce
+  - action: utter_ask_ex
+  - intent: choose
+  - action: action_exce
